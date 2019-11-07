@@ -1,7 +1,7 @@
 {
   "name": "Close Other Tabs",
   "description": "Closes Other Tabs except active one. Press Alt+Shift+W to close other tabs with keyboard",
-  "version": "0.9",
+  "version": "1.0",
   "manifest_version": 2,
   "background": {
     "scripts": [
