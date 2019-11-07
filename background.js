@@ -1,11 +1,11 @@
-const closeOtherTabs = (activeTab, tabs) => {
-  const otherTabIndexes = tabs.map(({id}) => id).filter((id) => activeTab.id !== id);
-  chrome.tabs.remove(otherTabIndexes);
+const closeOtherTabs = (tabs) => {
+  chrome.tabs.remove(tabs.map(({id}) => id));
 };
 
-chrome.browserAction.onClicked.addListener((activeTab) => {
-  chrome.tabs.query({pinned: false}, (tabs) => closeOtherTabs(activeTab, tabs));
+chrome.browserAction.onClicked.addListener(() => {
+  chrome.tabs.query({pinned: false, active: false}, closeOtherTabs);
 });
 
-// TODO listen to hotkeys
-chrome.commands.onCommand.addListener(() => {});
+chrome.commands.onCommand.addListener(() => {
+  chrome.tabs.query({pinned: false, active: false}, closeOtherTabs);
+});
