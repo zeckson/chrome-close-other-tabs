@@ -1,6 +1,7 @@
 #project
 .idea
 build/
+assemble.zip
 
 # Logs
 logs
