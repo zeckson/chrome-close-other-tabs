@@ -1,15 +1,13 @@
 {
   "name": "Close Other Tabs",
   "description": "Closes Other Tabs except active one. Press Alt+Shift+W to close other tabs with keyboard",
-  "version": "1.0",
-  "manifest_version": 2,
+  "version": "2.0",
+  "manifest_version": 3,
   "background": {
-    "scripts": [
-      "background.js"
-    ],
-    "persistent": false
+    "service_worker": "service_worker.js",
+    "type": "module"
   },
-  "browser_action": {
+  "action": {
     "default_icon": {
       "16": "images/closeOthers16.png",
       "32": "images/closeOthers32.png",
